@@ -1,0 +1,215 @@
+.dashboard {
+  min-height: 100vh;
+  background: #f3f6ff;
+  padding: 18px 28px 44px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.dashboard__container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ===== TOP CARD ===== */
+.dashboard__topCard {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  border-radius: 22px;
+  padding: 28px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 18px 55px rgba(13, 24, 61, 0.10);
+  margin-top: 22px;
+}
+
+.dashboard__user {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dashboard__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.dashboard__name {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.dashboard__since {
+  margin: 6px 0 0;
+  opacity: 0.68;
+  font-size: 14px;
+}
+
+/* right distance badge */
+.dashboard__distanceWrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dashboard__distanceLabel {
+  opacity: 0.65;
+  font-size: 14px;
+}
+
+.dashboard__distanceBadge {
+  background: #0b2bff;
+  color: white;
+  border-radius: 14px;
+  padding: 18px 18px;
+  min-width: 190px;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 12px 30px rgba(11, 43, 255, 0.22);
+}
+
+.dashboard__distanceValue {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+/* ===== SECTION TITLES ===== */
+.dashboard__sectionTitle {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 34px 0 18px;
+  color: #111827;
+}
+
+/* ===== CHART GRID ===== */
+.dashboard__grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr; /* BPM chart slightly wider */
+  gap: 26px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 18px 55px rgba(13, 24, 61, 0.10);
+  min-height: 360px; /* helps match figma proportions */
+}
+
+.card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.card__title {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.card__subtitle {
+  margin: 6px 0 0;
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.card__range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.card__rangeBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: transparent;
+  cursor: pointer;
+}
+
+.card__rangeBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dashboard__weekHeader {
+  margin-top: 34px;
+}
+
+.dashboard__weekSub {
+  opacity: 0.7;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.dashboard__gridWeek {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  margin-top: 18px;
+}
+
+.dashboard__rightStack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 26px;
+}
+
+.smallStat {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 18px 55px rgba(13, 24, 61, 0.10);
+  min-height: 150px;
+}
+
+.smallStat__label {
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.smallStat__value {
+  font-size: 28px;
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+.smallStat__value span {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.65;
+}
+
+.dashboard__footer {
+  margin-top: 44px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.85;
+  font-size: 13px;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(17, 24, 39, 0.08);
+}
+
+.recharts-text {
+  fill: rgba(17, 24, 39, 0.60);
+  font-size: 12px;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}

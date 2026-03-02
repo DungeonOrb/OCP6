@@ -1,0 +1,134 @@
+.connexion {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  background: #f3f6ff; 
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* LEFT SIDE */
+.connexion__left {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.connexion__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #0b2bff;
+  font-size: 28px;
+}
+
+.connexion__card {
+  width: min(520px, 100%);
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 48px 46px;
+  box-shadow: 0 16px 40px rgba(13, 24, 61, 0.08);
+  margin-top: 40px;
+}
+
+.connexion__title {
+  margin: 0 0 26px 0;
+  color: #0b2bff;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.connexion__subtitle {
+  margin: 0 0 22px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.connexion__label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.connexion__input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0 14px;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+}
+
+.connexion__input:focus {
+  border-color: rgba(11, 43, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(11, 43, 255, 0.12);
+}
+
+.connexion__btn {
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: #0b2bff;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.connexion__btn:hover {
+  background: #0923d9; 
+}
+
+.connexion__btn:active {
+  transform: translateY(1px);
+}
+
+.connexion__forgot {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #111827;
+  opacity: 0.85;
+}
+
+/* RIGHT SIDE IMAGE */
+.connexion__right {
+  position: relative;
+  overflow: hidden;
+}
+
+.connexion__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05);
+}
+
+.connexion__bubble {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  background: #ffffff;
+  color: #0b2bff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  max-width: 330px;
+  box-shadow: 0 16px 40px rgba(13, 24, 61, 0.14);
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.connexion__bubble strong {
+  font-weight: 800;
+}
+

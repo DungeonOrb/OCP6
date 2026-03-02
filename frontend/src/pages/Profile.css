@@ -1,0 +1,147 @@
+.profile {
+  min-height: 100vh;
+  background: #f3f6ff;
+  padding: 18px 28px 44px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.profile__container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.profile__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 34px;
+  margin-top: 22px;
+}
+
+/* left column cards */
+.profile__left {
+  display: grid;
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 18px 55px rgba(13, 24, 61, 0.10);
+}
+
+.profile__userCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.profile__name {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.profile__since {
+  margin: 6px 0 0;
+  opacity: 0.68;
+  font-size: 14px;
+}
+
+.profile__sectionTitle {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0 0 14px;
+}
+
+.profile__divider {
+  height: 1px;
+  background: rgba(0,0,0,0.10);
+  margin: 10px 0 16px;
+}
+
+.profile__row {
+  display: flex;
+  gap: 8px;
+  font-size: 15px;
+  padding: 8px 0;
+  opacity: 0.9;
+}
+
+.profile__label {
+  opacity: 0.7;
+}
+
+/* right column cards */
+.profile__rightTitle {
+  margin-bottom: 14px;
+}
+
+.profile__rightTitle h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.profile__rightTitle p {
+  margin: 4px 0 0;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.profile__statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.statCard {
+  background: #0b2bff;
+  color: #fff;
+  border-radius: 16px;
+  padding: 16px 18px;              
+  box-shadow: 0 12px 30px rgba(11, 43, 255, 0.20);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;      
+  gap: 10px;
+
+  min-height: unset;                
+}
+
+.statCard__title {
+  font-size: 13px;
+  opacity: 0.92;
+  margin: 0;
+}
+
+.statCard__value {
+  font-size: 26px;      
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.statCard__suffix {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-left: 6px;
+}
+
+
+.statCard--half {
+  grid-column: 1 / span 1;
+}
+
+.profile .card {
+  min-height: unset;
+}

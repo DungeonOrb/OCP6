@@ -1,0 +1,14 @@
+commande pour créer le projet?
+
+version? 19.2 dans package.json
+
+c'est quoi un hook?
+quels hook dans ce projet?
+
+expliquer un composant
+quel hook pour gérer le cycle de vie d'un composant?
+
+difference entre use state use effect
+comment react router
+
+a quoi sert les props et state et différences
