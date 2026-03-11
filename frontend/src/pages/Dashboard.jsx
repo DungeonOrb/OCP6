@@ -70,7 +70,9 @@ export default function Dashboard() {
           {/* TOP CARD */}
           <div className="dashboard__topCard">
             <div className="dashboard__user">
-              <img className="dashboard__avatar" src={user.profile.profilePicture} alt="avatar" />
+              <div className="dashboard__avatar">
+  <img src={user.profile.profilePicture} alt="avatar" />
+</div>
               <div>
                 <p className="dashboard__name">{user.profile.firstName} {user.profile.lastName}</p>
                 <p className="dashboard__since">Membre depuis le {memberSince}</p>
@@ -107,7 +109,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <WeeklyDistanceChart data={data.weeklyKm} />
+              <WeeklyDistanceChart data={data.weeklyKm} averageKm={data.avgKm4Weeks} />
               <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>● Km</div>
             </div>
 
