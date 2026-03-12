@@ -200,6 +200,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 26px;
   margin-top: 18px;
+  align-items: start;
 }
 
 .dashboard__rightStack {
@@ -270,4 +271,9 @@
   height: 8px;
   border-radius: 999px;
   background: #A7B2FF;
+}
+
+.dashboard__goalCard {
+  min-height: auto;
+  align-self: start;
 }

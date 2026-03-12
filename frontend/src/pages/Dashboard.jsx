@@ -151,14 +151,8 @@ export default function Dashboard() {
           </div>
 
           <div className="dashboard__gridWeek">
-            <div className="card">
-              <div style={{ fontSize: 26, fontWeight: 900, color: "#0B2BFF" }}>
-                x{data.totals.runsDone} <span style={{ fontSize: 16, fontWeight: 600, opacity: 0.6 }}>sur objectif de {data.totals.runsGoal}</span>
-              </div>
-              <div style={{ opacity: 0.75, marginTop: 6 }}>Courses hebdomadaire réalisées</div>
-              <div style={{ marginTop: 12 }}>
-                <GoalDonut done={data.totals.runsDone} goal={data.totals.runsGoal} />
-              </div>
+            <div className="card dashboard__goalCard">
+              <GoalDonut done={data.totals.runsDone} goal={data.totals.runsGoal} />
             </div>
 
             <div className="dashboard__rightStack">

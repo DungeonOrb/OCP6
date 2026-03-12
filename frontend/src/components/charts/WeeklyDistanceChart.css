@@ -2,7 +2,7 @@
   position: relative;
 }
 
-/* Hide tooltip by default, fade with CSS */
+
 .weekly-chart__tooltip {
   position: absolute;
   left: 50%;
@@ -25,14 +25,14 @@
   opacity: 1;
 }
 
-/* Default bar color transition */
+
 .weekly-chart .recharts-bar-rectangle path,
 .weekly-chart .recharts-bar-rectangle rect {
   transition: fill 420ms ease;
   fill: #a7b2ff;
 }
 
-/* Hover anywhere on container -> bars turn dark blue */
+
 .weekly-chart:hover .recharts-bar-rectangle path,
 .weekly-chart:hover .recharts-bar-rectangle rect {
   fill: #0b2bff;

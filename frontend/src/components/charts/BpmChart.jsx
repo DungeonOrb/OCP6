@@ -23,7 +23,6 @@ export default function BpmChart({ data }) {
           <XAxis dataKey="day" tickLine={false} axisLine={false} />
           <YAxis tickLine={false} axisLine={false} domain={["dataMin-5", "dataMax+5"]} />
 
-          {/* no tooltip, no grey cursor */}
           <Tooltip cursor={false} content={() => null} />
 
           {/* Min */}
@@ -42,7 +41,6 @@ export default function BpmChart({ data }) {
             barSize={14}
           />
 
-          {/* Line = light blue by default, blue on hover via CSS */}
           <Line
             className="bpm-chart__line"
             type="monotone"
