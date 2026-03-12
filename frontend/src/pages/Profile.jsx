@@ -83,7 +83,13 @@ export default function Profile() {
             {/* LEFT */}
             <div className="profile__left">
               <div className="card profile__userCard">
-                <img className="profile__avatar" src={view.avatarUrl} alt="avatar" />
+                <div className="profile__avatarWrapper">
+                  <img
+                    className="profile__avatar"
+                    src={view.avatarUrl}
+                    alt="avatar"
+                  />
+                </div>
                 <div>
                   <h3 className="profile__name">{view.fullName}</h3>
                   <p className="profile__since">Membre depuis le {view.memberSince}</p>

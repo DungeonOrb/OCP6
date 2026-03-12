@@ -137,11 +137,30 @@
   margin-left: 6px;
 }
 
-
 .statCard--half {
   grid-column: 1 / span 1;
 }
 
 .profile .card {
   min-height: unset;
+}
+
+.profile__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.profile__avatarWrapper {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+.profile__avatarWrapper:hover .profile__avatar {
+  transform: scale(1.3);
 }

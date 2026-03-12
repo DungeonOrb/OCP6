@@ -94,9 +94,9 @@
 /* ===== SECTION TITLES ===== */
 .dashboard__sectionTitle {
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 500;
   margin: 34px 0 18px;
-  color: #111827;
+
 }
 
 /* ===== CHART GRID ===== */
@@ -212,9 +212,8 @@
 .smallStat {
   background: white;
   border-radius: 16px;
-  padding: 22px;
+  padding: 20px 22px;
   box-shadow: 0 18px 55px rgba(13, 24, 61, 0.10);
-  min-height: 150px;
 }
 
 .smallStat__label {
@@ -224,7 +223,7 @@
 
 .smallStat__value {
   font-size: 28px;
-  font-weight: 900;
+  font-weight: 500;
   margin-top: 12px;
 }
 
