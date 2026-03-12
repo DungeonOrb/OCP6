@@ -1,0 +1,9 @@
+.bpm-chart .bpm-chart__line path.recharts-curve {
+  stroke: #e1e3f3;
+  transition: stroke 320ms ease;
+}
+
+.bpm-chart:hover .bpm-chart__line path.recharts-curve {
+  stroke: #0B2BFF;
+}
+

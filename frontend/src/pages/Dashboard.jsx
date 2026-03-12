@@ -71,8 +71,8 @@ export default function Dashboard() {
           <div className="dashboard__topCard">
             <div className="dashboard__user">
               <div className="dashboard__avatar">
-  <img src={user.profile.profilePicture} alt="avatar" />
-</div>
+                <img src={user.profile.profilePicture} alt="avatar" />
+              </div>
               <div>
                 <p className="dashboard__name">{user.profile.firstName} {user.profile.lastName}</p>
                 <p className="dashboard__since">Membre depuis le {memberSince}</p>
@@ -83,11 +83,11 @@ export default function Dashboard() {
               <div className="dashboard__distanceLabel">Distance totale parcourue</div>
 
               <div className="dashboard__distanceBadge">
-  <span style={{ fontSize: 22 }}>✳︎</span>
-  <div className="dashboard__distanceValue">
-    {Number(user.statistics.totalDistance).toFixed(0)} km
-  </div>
-</div>
+                <span style={{ fontSize: 22 }}>✳︎</span>
+                <div className="dashboard__distanceValue">
+                  {Number(user.statistics.totalDistance).toFixed(0)} km
+                </div>
+              </div>
             </div>
           </div>
 
@@ -98,7 +98,9 @@ export default function Dashboard() {
             <div className="card">
               <div className="card__top">
                 <div>
-                  <h3 className="card__title">{data.avgKm4Weeks}km en moyenne</h3>
+                  <h3 className="card__title card__title--km">
+                    {Math.ceil(data.avgKm4Weeks)}km en moyenne
+                  </h3>
                   <p className="card__subtitle">Total des kilomètres 4 dernières semaines</p>
                 </div>
 
@@ -110,7 +112,10 @@ export default function Dashboard() {
               </div>
 
               <WeeklyDistanceChart data={data.weeklyKm} averageKm={data.avgKm4Weeks} />
-              <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>● Km</div>
+              <div className="chartLegend">
+                <span className="chartLegend__dot"></span>
+                Km
+              </div>
             </div>
 
             <div className="card">
@@ -132,9 +137,9 @@ export default function Dashboard() {
               <BpmChart data={data.bpm} />
 
               <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>
-                <span style={{ marginRight: 16, color:"#F7A9A3" }}>● Min</span>
-                <span style={{ marginRight: 16, color:"#FF2D17" }}>● Max BPM</span>
-                <span style={{ color:"#0B2BFF" }}>● Max BPM</span>
+                <span style={{ marginRight: 16, color: "#F7A9A3" }}>● Min</span>
+                <span style={{ marginRight: 16, color: "#FF2D17" }}>● Max BPM</span>
+                <span style={{ color: "#0B2BFF" }}>● Max BPM</span>
               </div>
             </div>
           </div>
@@ -183,19 +188,19 @@ export default function Dashboard() {
     </>
   );
   function LegendDot({ color, label }) {
-  return (
-    <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-      <span
-        style={{
-          width: 8,
-          height: 8,
-          borderRadius: 999,
-          background: color,
-          display: "inline-block",
-        }}
-      />
-      {label}
-    </span>
-  );
-}
+    return (
+      <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+        <span
+          style={{
+            width: 8,
+            height: 8,
+            borderRadius: 999,
+            background: color,
+            display: "inline-block",
+          }}
+        />
+        {label}
+      </span>
+    );
+  }
 }

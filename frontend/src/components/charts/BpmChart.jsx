@@ -8,25 +8,11 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
-function BpmTooltip({ active, payload, label }) {
-  if (!active || !payload?.length) return null;
-
-  const byKey = Object.fromEntries(payload.map((p) => [p.dataKey, p.value]));
-
-  return (
-    <div style={{ background: "white", padding: 10, fontSize: 12 }}>
-      <div style={{ marginBottom: 6, opacity: 0.75 }}>{label}</div>
-      <div>Min: {byKey.min ?? "-"} bpm</div>
-      <div>Max: {byKey.max ?? "-"} bpm</div>
-      <div>Last Max: {byKey.lastMax ?? "-"} bpm</div>
-    </div>
-  );
-}
+import "./BpmChart.css";
 
 export default function BpmChart({ data }) {
   return (
-    <div style={{ width: "100%", height: 260 }}>
+    <div className="bpm-chart" style={{ width: "100%", height: 260 }}>
       <ResponsiveContainer>
         <ComposedChart
           data={data}
@@ -36,8 +22,11 @@ export default function BpmChart({ data }) {
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="day" tickLine={false} axisLine={false} />
           <YAxis tickLine={false} axisLine={false} domain={["dataMin-5", "dataMax+5"]} />
-          <Tooltip content={<BpmTooltip />} />
 
+          {/* no tooltip, no grey cursor */}
+          <Tooltip cursor={false} content={() => null} />
+
+          {/* Min */}
           <Bar
             dataKey="min"
             fill="#F7A9A3"
@@ -45,6 +34,7 @@ export default function BpmChart({ data }) {
             barSize={14}
           />
 
+          {/* Max */}
           <Bar
             dataKey="max"
             fill="#FF2D17"
@@ -52,14 +42,20 @@ export default function BpmChart({ data }) {
             barSize={14}
           />
 
+          {/* Line = light blue by default, blue on hover via CSS */}
           <Line
+            className="bpm-chart__line"
             type="monotone"
             dataKey="lastMax"
-            stroke="#0B2BFF"
-            dot={{ r: 3 }}
-            activeDot={{ r: 5 }}
+            stroke="#A7B2FF"
             strokeWidth={2}
-            isAnimationActive
+            activeDot={false}
+            dot={{
+              r: 3,
+              fill: "#0B2BFF",
+              stroke: "#0B2BFF",
+              strokeWidth: 0,
+            }}
           />
         </ComposedChart>
       </ResponsiveContainer>
