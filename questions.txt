@@ -14,8 +14,6 @@ comment react router
 a quoi sert les props et state et différences? props = héritage, state = stockage et modification data
 
 // à faire
-refaire le footer dans un layout
 "Max BPM" bleu est enfaite AVG Bpm (Tiny Line Chart)
-image connexion
 
 

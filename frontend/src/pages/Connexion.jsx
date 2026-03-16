@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Connexion.css";
+import runningImage from "../assets/img/sportseeimg.png";
 
 import { login } from "../services/api";
 import { setToken, isAuthenticated } from "../auth/auth";
@@ -77,12 +78,9 @@ export default function Connexion() {
       {/* RIGHT */}
       <div className="connexion__right">
         <div
-          className="connexion__bg"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1546484959-f9a5b2d7b6d2?auto=format&fit=crop&w=1400&q=80)",
-          }}
-        />
+  className="connexion__bg"
+  style={{ backgroundImage: `url(${runningImage})` }}
+/>
         <div className="connexion__bubble">
           Analysez vos performances en un clin d’œil, <br />
           suivez vos progrès et atteignez vos objectifs.

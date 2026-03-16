@@ -25,7 +25,6 @@ export default function BpmChart({ data }) {
 
           <Tooltip cursor={false} content={() => null} />
 
-          {/* Min */}
           <Bar
             dataKey="min"
             fill="#F7A9A3"
@@ -33,7 +32,6 @@ export default function BpmChart({ data }) {
             barSize={14}
           />
 
-          {/* Max */}
           <Bar
             dataKey="max"
             fill="#FF2D17"
@@ -44,16 +42,16 @@ export default function BpmChart({ data }) {
           <Line
             className="bpm-chart__line"
             type="monotone"
-            dataKey="lastMax"
+            dataKey="avg"
             stroke="#A7B2FF"
-            strokeWidth={2}
-            activeDot={false}
+            strokeWidth={3}
             dot={{
               r: 3,
               fill: "#0B2BFF",
               stroke: "#0B2BFF",
               strokeWidth: 0,
             }}
+            activeDot={false}
           />
         </ComposedChart>
       </ResponsiveContainer>

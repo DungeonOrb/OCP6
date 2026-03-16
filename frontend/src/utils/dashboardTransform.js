@@ -34,39 +34,35 @@ export function buildDashboardData(activity, rangeStartStr) {
   // - max = max(max)
   // - lastMax = max of the latest session that weekday
   const bpm = DAY_LABELS.map((day) => ({
-    day,
-    min: null,
-    max: null,
-    lastMax: null,
-    _lastDate: null, // internal helper
-  }));
+  day,
+  min: null,
+  max: null,
+  avg: null,
+  _count: 0,
+}));
 
-  for (const s of activity) {
-    const i = mondayIndex(s.date);
-    const hr = s.heartRate;
-    const cur = bpm[i];
+for (const s of activity) {
+  const i = mondayIndex(s.date);
+  const hr = s.heartRate;
+  const cur = bpm[i];
 
-    const nextMin = cur.min == null ? hr.min : Math.min(cur.min, hr.min);
-    const nextMax = cur.max == null ? hr.max : Math.max(cur.max, hr.max);
+  const nextMin = cur.min == null ? hr.min : Math.min(cur.min, hr.min);
+  const nextMax = cur.max == null ? hr.max : Math.max(cur.max, hr.max);
 
-    // lastMax = max of the most recent session on that weekday
-    let nextLastMax = cur.lastMax;
-    let nextLastDate = cur._lastDate;
-    if (nextLastDate == null || s.date > nextLastDate) {
-      nextLastDate = s.date;
-      nextLastMax = hr.max;
-    }
+  const currentAvgTotal = (cur.avg ?? 0) * cur._count;
+  const nextCount = cur._count + 1;
+  const nextAvg = (currentAvgTotal + hr.average) / nextCount;
 
-    bpm[i] = {
-      day: cur.day,
-      min: nextMin,
-      max: nextMax,
-      lastMax: nextLastMax,
-      _lastDate: nextLastDate,
-    };
-  }
+  bpm[i] = {
+    day: cur.day,
+    min: nextMin,
+    max: nextMax,
+    avg: Number(nextAvg.toFixed(1)),
+    _count: nextCount,
+  };
+}
 
-  const bpmClean = bpm.map(({ _lastDate, ...rest }) => rest);
+const bpmClean = bpm.map(({ _count, ...rest }) => rest);
 
   const runsDone = activity.length;
   const durationMinutes = activity.reduce((acc, s) => acc + s.duration, 0);

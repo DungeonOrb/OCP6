@@ -1,9 +1,15 @@
-.bpm-chart .bpm-chart__line path.recharts-curve {
-  stroke: #e1e3f3;
+.bpm-chart .bpm-chart__line path.recharts-curve,
+.bpm-chart .bpm-chart__line .recharts-line-curve {
+  stroke: #A7B2FF;
   transition: stroke 320ms ease;
 }
 
-.bpm-chart:hover .bpm-chart__line path.recharts-curve {
+.bpm-chart:hover .bpm-chart__line path.recharts-curve,
+.bpm-chart:hover .bpm-chart__line .recharts-line-curve {
   stroke: #0B2BFF;
 }
 
+.bpm-chart .recharts-line-dots circle {
+  fill: #0B2BFF;
+  stroke: #0B2BFF;
+}
