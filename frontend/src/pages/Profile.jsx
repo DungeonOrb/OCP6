@@ -4,6 +4,7 @@ import Navbar from "../components/layout/Navbar";
 import { getToken, removeToken } from "../auth/auth";
 import { getUserInfo } from "../services/api";
 import "./Profile.css";
+import Footer from "../components/layout/Footer";
 
 function frDate(dateStr) {
   const d = new Date(dateStr + "T00:00:00");
@@ -138,6 +139,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

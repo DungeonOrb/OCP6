@@ -6,6 +6,7 @@ import { getToken, removeToken } from "../auth/auth";
 import { useNavigate } from "react-router-dom";
 import { getUserActivity } from "../services/api";
 import { buildDashboardData } from "../utils/dashboardTransform";
+import Footer from "../components/layout/Footer";
 
 import WeeklyDistanceChart from "../components/charts/WeeklyDistanceChart";
 import BpmChart from "../components/charts/BpmChart";
@@ -158,7 +159,7 @@ export default function Dashboard() {
             <div className="dashboard__rightStack">
               <div className="smallStat">
                 <div className="smallStat__label">Durée d’activité</div>
-                <div className="smallStat__value">
+                <div className="smallStat__value" style={{ color: "#1e1cc4" }}>
                   {data.totals.durationMinutes} <span>minutes</span>
                 </div>
               </div>
@@ -171,15 +172,11 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-
-          {/* FOOTER */}
-          <div className="dashboard__footer">
-            <div>©Sportsee &nbsp; Tous droits réservés</div>
-            <div>Conditions générales &nbsp;&nbsp; Contact</div>
-          </div>
         </div>
       </div>
-    </>
+  <Footer />
+</>
+
   );
   function LegendDot({ color, label }) {
     return (

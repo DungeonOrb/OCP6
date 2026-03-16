@@ -1,4 +1,4 @@
-commande pour créer le projet?
+commande pour créer le projet? npm create vite@latest
 
 version? 19.2 dans package.json
 
@@ -8,7 +8,14 @@ quels hook dans ce projet?
 expliquer un composant
 quel hook pour gérer le cycle de vie d'un composant?
 
-difference entre use state use effect
+difference entre use state use effect? use state = stockage et modification data, use effect = appel API
 comment react router
 
-a quoi sert les props et state et différences
+a quoi sert les props et state et différences? props = héritage, state = stockage et modification data
+
+// à faire
+refaire le footer dans un layout
+"Max BPM" bleu est enfaite AVG Bpm (Tiny Line Chart)
+image connexion
+
+

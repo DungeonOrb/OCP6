@@ -1,0 +1,12 @@
+.footer {
+  padding: 16px 0;
+}
+
+.footer__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.85;
+  font-size: 13px;
+}
