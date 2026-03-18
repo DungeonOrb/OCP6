@@ -50,7 +50,7 @@ export default function Profile() {
       avatarUrl: profile.profilePicture,
 
       age: profile.age,
-      gender: "Femme",
+      gender: profile.gender,
       heightCm: profile.height,
       weightKg: profile.weight,
 

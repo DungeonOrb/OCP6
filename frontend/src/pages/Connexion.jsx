@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./Connexion.css";
-import runningImage from "../assets/img/sportseeimg.png";
 
 import { login } from "../services/api";
 import { setToken, isAuthenticated } from "../auth/auth";
-import { Navigate } from "react-router-dom";
+import runningImage from "../assets/img/sportsee.png";
 
 export default function Connexion() {
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState("sophiemartin");
-  const [password, setPassword] = useState("password123");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   if (isAuthenticated()) {
@@ -33,11 +32,8 @@ export default function Connexion() {
 
   return (
     <div className="connexion">
-      {/* LEFT */}
       <div className="connexion__left">
-        <div className="connexion__brand">
-          SPORTSEE
-        </div>
+        <div className="connexion__brand">SPORTSEE</div>
 
         <div className="connexion__card">
           <h1 className="connexion__title">
@@ -50,9 +46,9 @@ export default function Connexion() {
             <label className="connexion__label">Adresse email</label>
             <input
               className="connexion__input"
+              type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder=""
             />
 
             <label className="connexion__label">Mot de passe</label>
@@ -61,7 +57,6 @@ export default function Connexion() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder=""
             />
 
             <button className="connexion__btn" type="submit">
@@ -75,14 +70,13 @@ export default function Connexion() {
         </div>
       </div>
 
-      {/* RIGHT */}
       <div className="connexion__right">
         <div
-  className="connexion__bg"
-  style={{ backgroundImage: `url(${runningImage})` }}
-/>
+          className="connexion__bg"
+          style={{ backgroundImage: `url(${runningImage})` }}
+        />
         <div className="connexion__bubble">
-          Analysez vos performances en un clin d’œil, <br />
+          <strong>Analysez</strong> vos performances en un clin d’œil, <br />
           suivez vos progrès et atteignez vos objectifs.
         </div>
       </div>

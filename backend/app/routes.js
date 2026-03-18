@@ -62,14 +62,15 @@ router.get("/api/user-info", authenticateToken, (req, res) => {
 
   // Extract user profile information
   const userProfile = {
-    firstName: user.userInfos.firstName,
-    lastName: user.userInfos.lastName,
-    createdAt: user.userInfos.createdAt,
-    age: user.userInfos.age,
-    weight: user.userInfos.weight,
-    height: user.userInfos.height,
-    profilePicture: user.userInfos.profilePicture,
-  };
+  firstName: user.userInfos.firstName,
+  lastName: user.userInfos.lastName,
+  createdAt: user.userInfos.createdAt,
+  age: user.userInfos.age,
+  gender: user.userInfos.gender === "female" ? "Femme" : "Homme",
+  weight: user.userInfos.weight,
+  height: user.userInfos.height,
+  profilePicture: user.userInfos.profilePicture,
+};
 
   return res.json({
     profile: userProfile,
